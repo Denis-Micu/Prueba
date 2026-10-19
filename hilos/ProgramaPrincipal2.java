@@ -1,7 +1,8 @@
+package hilos;
 public class ProgramaPrincipal2 {
     public static void main(String[] args) {
-        Thread hiloAscendente = new Thread(new CuentaAscendente(),"ascendente");
-        Thread hiloDescendente = new Thread(new CuentaDescendente(),"descendiente");
+        Thread hiloAscendente = new Thread(new CuentaAscendente(),"1");
+        Thread hiloDescendente = new Thread(new CuentaAscendente(),"2");
 
         hiloAscendente.start();
         hiloDescendente.start();
@@ -18,12 +19,12 @@ public class ProgramaPrincipal2 {
         }
     }
 
-    static class CuentaDescendente implements Runnable {
-        @Override
-        public void run() {
-            for (int i = 5; i >= 1; i--) {
-                System.out.println(Thread.currentThread().getName() + " -> " + i);
-            }
-        }
-    }
+    // static class CuentaDescendente implements Runnable {
+    //     @Override
+    //     public void run() {
+    //         for (int i = 5; i >= 1; i--) {
+    //             System.out.println(Thread.currentThread().getName() + " -> " + i);
+    //         }
+    //     }
+    // }
 }
